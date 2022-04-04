@@ -1,12 +1,12 @@
-import React, { lazy, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { getData } from './Actions/index';
-import Week from './Components/Week';
-import Hour from './Components/Hour';
 
-const Today = lazy(() => import('./Components/Today'))
-const SideBar = lazy(() => import('./Components/SideBar'));
+const Today = React.lazy(() => import('./Components/Today'))
+const SideBar = React.lazy(() => import('./Components/SideBar'));
+const Hour = React.lazy(() => import('./Components/Hour'));
+const Week = React.lazy(() => import('./Components/Week'));
 function App() {
 
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ function App() {
       value: false
     },
   ])
-
+  // render page theo state
   const handleChangeTab = (el) => {
     setMode(mode.map(item => item.index === el.index ? { ...item, value: true } : { ...item, value: false }))
   }
