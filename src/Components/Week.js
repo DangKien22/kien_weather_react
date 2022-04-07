@@ -35,7 +35,7 @@ function Week() {
                 <div className="row">
                     <div className="col-md-6 col-xs-12">
                         <p className="fs-6 text-muted">Temp current : {Math.round(item && item.temp.day)} °C</p>
-                        <p className="fs-6 text-muted">Temp :  {item && item.temp && item.temp.min} °C - {item && item.temp && item.temp.max} - °C</p>
+                        <p className="fs-6 text-muted">Temp :  {item && item.temp && item.temp.min} °C - {item && item.temp && item.temp.max}  °C</p>
                         <p className="fs-6 text-muted">Humidity : {item && item.humidity}  %</p>
                         <p className="fs-6 text-muted">Wind speed : {item && item.wind_speed} km/h</p>
                     </div>

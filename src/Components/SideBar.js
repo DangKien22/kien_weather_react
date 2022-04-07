@@ -21,8 +21,8 @@ export default function SideBar() {
     }
 
 
-    const filterImg = icons.includes(data?.current?.weather[0]?.main)// lay du lieu tu field weather voi element dau tien la 0
-        ? data?.current?.weather[0]?.main
+    const filterImg = icons.includes(data && data.current && data.current.weather[0] && data.current.weather[0].main)// lay du lieu tu field weather voi element dau tien la 0
+        ? data && data.current && data.current.weather[0] && data.current.weather[0].main
         : 'atmosphere'
 
     return (
@@ -45,14 +45,14 @@ export default function SideBar() {
                 {nameCity}
             </div>
             <div className="fs-1 fw-bold">
-                {Math.round(data?.current?.temp)} °C
+                {Math.round(data && data.current && data.current.temp)} °C
             </div>
             <div className="fs-5 lh-lg">
-                {moment.unix(data?.current?.dt).format('dddd, h:mm a')}
+                {moment.unix(data && data.current && data.current.dt).format('dddd, h:mm a')}
             </div>
             <div className="fs-6 lh-base text-capitalize text-muted mb-3">
-                {data?.current?.weather[0]?.description} <br />
-                {data?.current?.weather[0]?.main} {`${data?.current?.clouds}%`}
+                {data && data.current && data.current.weather[0] && data.current.weather[0].description}<br />
+                {data && data.current && data.current.weather[0] && data.current.weather[0].main} {`${data && data.current && data.current.clouds}%`}
             </div>
             <div className="position-relative d-flex justify-content-center align-items-center">
                 <div className="position-absolute">

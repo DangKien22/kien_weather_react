@@ -3,6 +3,28 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { getData } from './Actions/index';
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyClmbi40w2m0MfXHZc_0TEXqyyQoFiKn7o",
+  authDomain: "weatherapp-7d26a.firebaseapp.com",
+  projectId: "weatherapp-7d26a",
+  storageBucket: "weatherapp-7d26a.appspot.com",
+  messagingSenderId: "620177857335",
+  appId: "1:620177857335:web:d4df45922a7bf31b2418b2",
+  measurementId: "G-86HBJ6XJWM"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 const Today = React.lazy(() => import('./Components/Today'))
 const SideBar = React.lazy(() => import('./Components/SideBar'));
 const Hour = React.lazy(() => import('./Components/Hour'));
